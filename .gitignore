@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.mp3
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.zip
+_test/
