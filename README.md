@@ -17,13 +17,35 @@ Everything runs locally on your computer. Files are not uploaded, and original m
 - Cancel a running batch
 - Avoid overwriting existing output files
 
+## One-click installation and launch
+
+Download and extract the repository, then double-click:
+
+```text
+Start Media to MP3.bat
+```
+
+The launcher automatically:
+
+1. Checks for Python and Tkinter.
+2. Installs Python 3.13 through WinGet if Python is missing.
+3. Checks for FFmpeg and FFprobe.
+4. Installs the FFmpeg Essentials build through WinGet if FFmpeg is missing.
+5. Starts the application after setup succeeds.
+
+The first launch may take several minutes while Windows downloads the missing components. Later launches skip installation and open the application directly.
+
+> [!NOTE]
+> Automatic installation requires Windows Package Manager (`winget`), included with current Windows 10 and Windows 11 installations. If it is unavailable, install or update **App Installer** from the Microsoft Store.
+
 ## Requirements
 
 - Windows 10 or Windows 11
-- Python 3.10 or newer with Tkinter
-- FFmpeg and FFprobe available on `PATH`
+- An internet connection during the first launch if dependencies are missing
 
-## Installation
+## Manual installation
+
+Use this section only if the one-click launcher cannot install a dependency.
 
 ### 1. Install Python
 
@@ -52,7 +74,7 @@ ffmpeg -version
 ffprobe -version
 ```
 
-### 3. Download this application
+### 3. Download and launch this application
 
 Either download the repository as a ZIP from GitHub and extract it, or clone it:
 
@@ -61,17 +83,13 @@ git clone https://github.com/Monkeysift69/MP4-to-MP3.git
 cd MP4-to-MP3
 ```
 
-No Python packages need to be installed. The application uses only Python's standard library.
-
-## Running the application
-
-Double-click:
+No Python packages need to be installed. The application uses only Python's standard library. Double-click:
 
 ```text
 Start Media to MP3.bat
 ```
 
-Alternatively, run it from PowerShell:
+Alternatively, run the application directly from PowerShell after installing the prerequisites:
 
 ```powershell
 python media_to_mp3.py
